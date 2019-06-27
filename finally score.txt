@@ -1,0 +1,16 @@
+number : 1   
+name : zhangsan
+telephone : 123456
+ave : 86
+number : 2   
+name : lisi
+telephone : 123039
+ave : 84.4
+number : 3   
+name : wangwu
+telephone : 123110
+ave : 83.8
+number : 4   
+name : wangchoudan
+telephone : 123063
+ave : 75.8

@@ -10,12 +10,14 @@
 #include <fstream>
 #include <algorithm>
 #include <iomanip>
+#define m 4
 using namespace std;
 struct student
 {
     string number;
     string name;
     string tel;
+    string judge_name;
     double score[7];
     double sum;
     double max,min;
@@ -26,17 +28,17 @@ bool cmp(student s1,student s2){
 }
 int main()
 {
-    ifstream in("/Users/s20181102931/Desktop/wrj.txt");
-    ifstream on("/Users/s20181102931/Desktop/we.txt");
+    ifstream in("/Users/s20181102931/Desktop/information.txt");
+    ifstream on("/Users/s20181102931/Desktop/score.txt");
     ofstream out("/Users/s20181102931/Desktop/finally score.txt");
     
-    for(int t=0;t<3;t++)
+    for(int t=0;t<m;t++)
     {
         in>>stu[t].number>>stu[t].name>>stu[t].tel;
         stu[t].sum=stu[t].ave=0;
         for(int i=0;i<7;i++)
         {
-            on >> stu[t].score[i];
+            on >> stu[t].judge_name>>stu[t].score[i];
             stu[t].sum=stu[t].score[i]+stu[t].sum;
         }
         stu[t].max=stu[t].score[0];
@@ -52,10 +54,12 @@ int main()
         stu[t].ave = 1.0*stu[t].sum/5;
     }
     in.close();
-    sort(stu,stu+3,cmp);
-    for(int i=0;i<3;i++)
+    sort(stu,stu+m,cmp);
+    for(int i=0;i<m;i++)
     {
-        out<<left<<setw(3)<<stu[i].number<< " " <<left<<setw(3)<<stu[i].name<<" "<<left<<setw(3)<<stu[i].ave<<" "<<left<<setw(3)<<stu[i].tel<<endl;
+      
+        out<<left<<"number : "<<setw(4)<<stu[i].number<<endl
+    <<left<<setw(4)<<"name : "<<stu[i].name<<endl<<left<<setw(4)<<"telephone : "<<stu[i].tel<<endl<<left<<setw(4)<<"ave : "<<stu[i].ave<<endl;
     }
     out.close();
     return 0;
