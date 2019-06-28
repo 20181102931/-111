@@ -22,15 +22,15 @@ struct student
     double sum;
     double max,min;
     double ave;
-}stu[5];
+}stu[m];
 bool cmp(student s1,student s2){
     return s1.ave>s2.ave;
 }
 int main()
 {
-    ifstream in("/Users/s20181102931/Desktop/information.txt");
-    ifstream on("/Users/s20181102931/Desktop/score.txt");
-    ofstream out("/Users/s20181102931/Desktop/finally score.txt");
+    ifstream in("/Users/s20181102931/Desktop/学生成绩打分2931/information.txt");
+    ifstream on("/Users/s20181102931/Desktop/学生成绩打分2931/score.txt");
+    ofstream out("/Users/s20181102931/Desktop/学生成绩打分2931/finally/score.txt");
     
     for(int t=0;t<m;t++)
     {
